@@ -10,6 +10,8 @@ app.use((req, res, next) => {
   next();
 });
 
+console.log('KEY:', process.env.ANTHROPIC_API_KEY ? 'EXISTE' : 'NO EXISTE');
+
 app.post('/proxy', async (req, res) => {
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
